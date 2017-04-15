@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en" data-framework="angularjs">
+<head>
+    <meta charset="utf-8">
+    <title>TicketAlert</title>
+    {% stylesheets output='js/styles'
+    "@AcmeApiClientBundle/Resources/public/css/main.css"
+
+    %}
+	
+    <link href="{{ asset_url }}" type="text/css" rel="stylesheet" media="all"/>
+	    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/angular_material/0.8.3/angular-material.min.css">
+	   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    {% endstylesheets %}
+    <script>
+        var root_path = "{{ asset('', null, true) }}";
+        var assets_path = root_path + "bundles/acmeapiclient/partials";
+    </script>
+</head>
+
+
+<!--Header_section-->
+<body layout="row" ng-app="ApiClient">
+	<md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
+	  <md-toolbar class="md-tall md-hue-2">
+	    <span flex></span>
+	    <div layout="column" class="md-toolbar-tools-bottom inset">
+	      <user-avatar></user-avatar>
+	      <span></span>
+	      <div>Quentin JOIGNAUD</div>
+	      <div>quentin.joignaud@modisfrance.fr</div>
+	    </div>
+	  </md-toolbar>
+	  <md-list>
+	  <md-item>
+	    <a ui-sref="param">
+	      <md-item-content md-ink-ripple layout="row" layout-align="start center">
+	        <div class="inset">
+	          <ng-md-icon icon="dashboard"></ng-md-icon>
+	        </div>
+	        <div class="inset">Paramétrage</div>
+	      </md-item-content>
+	    </a>
+	  </md-item>
+	  <md-item>
+	    <a ui-sref="account">
+	      <md-item-content md-ink-ripple layout="row" layout-align="start center">
+	        <div class="inset">
+	          <ng-md-icon icon="group"></ng-md-icon>
+	        </div>
+	        <div class="inset">Compte</div>
+	      </md-item-content>
+	    </a>
+	  </md-item>
+	  <md-item>
+	    <a ui-sref="faq">
+	      <md-item-content md-ink-ripple layout="row" layout-align="start center">
+	        <div class="inset">
+	          <ng-md-icon icon="question_answer"></ng-md-icon>
+	        </div>
+	        <div class="inset">FAQ</div>
+	      </md-item-content>
+	    </a>
+	  </md-item>
+	  <md-divider></md-divider>
+	  <md-subheader>Management</md-subheader>
+	  <md-item>
+	    <a ui-sref="admin">
+	      <md-item-content md-ink-ripple layout="row" layout-align="start center">
+	        <div class="inset">
+	          <ng-md-icon icon="settings"></ng-md-icon>
+	        </div>
+	        <div class="inset">Administration</div>
+	      </md-item-content>
+	    </a>
+	  </md-item>
+	  <md-item>
+	    <a ui-sref="stat">
+	      <md-item-content md-ink-ripple layout="row" layout-align="start center">
+	        <div class="inset">
+	          <ng-md-icon icon="poll"></ng-md-icon>
+	        </div>
+	        <div class="inset">Statistiques</div>
+	      </md-item-content>
+	    </a>
+	  </md-item>
+	</md-list>
+	</md-sidenav>
+	<div layout="column" class="relative" layout-fill role="main">
+	  <md-button class="md-fab md-fab-bottom-right" aria-label="Add" ng-click="showAdd($event)">
+	    <ng-md-icon icon="add"></ng-md-icon>
+	  </md-button>
+	  <md-toolbar ng-show="!showSearch">
+	    <div class="md-toolbar-tools">
+	      <md-button ng-click="toggleSidenav('left')" hide-gt-md aria-label="Menu">
+	        <ng-md-icon icon="menu"></ng-md-icon>
+	      </md-button>
+	      <h3>
+
+	      </h3>
+	      <span flex></span>
+	      <md-button aria-label="Search" ng-click="showSearch = !showSearch">
+	        <ng-md-icon icon="search"></ng-md-icon>
+	      </md-button>
+	    </div>
+
+	  </md-toolbar>
+
+		<div class="container" ui-view></div>
+	</div>
+<!-- Angular Material Dependencies -->
+
+
+
+    <!--End Footer-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/sha1.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/sha512.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/md5.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/components/enc-base64-min.js"></script>
+
+{% javascripts output='js/client'
+
+"@AcmeApiClientBundle/Resources/public/components/angular/angular.js"
+"@AcmeApiClientBundle/Resources/public/components/angular-route/angular-route.min.js"
+"@AcmeApiClientBundle/Resources/public/components/angular-ui-router/angular-ui-router.min.js"
+"@AcmeApiClientBundle/Resources/public/components/angular-cookies/angular-cookies.js"
+"@AcmeApiClientBundle/Resources/public/components/angular-material/angular-material.min.js"
+"@AcmeApiClientBundle/Resources/public/components/angular-animate/angular-animate.min.js"
+"@AcmeApiClientBundle/Resources/public/components/angular-aria/angular-aria.min.js"
+"@AcmeApiClientBundle/Resources/public/components/angular-messages/angular-messages.min.js"
+"@AcmeApiClientBundle/Resources/public/components/angular-material-icons/angular-material-icons.min.js"
+"@AcmeApiClientBundle/Resources/public/components/lodash/dist/lodash.js"
+"@AcmeApiClientBundle/Resources/public/components/restangular/dist/restangular.js"
+"@AcmeApiClientBundle/Resources/public/components/angular-bootstrap/ui-bootstrap-tpls.js"
+"@AcmeApiClientBundle/Resources/public/js/app.js"
+"@AcmeApiClientBundle/Resources/public/js/paramController.js"
+"@AcmeApiClientBundle/Resources/public/js/accountController.js"
+"@AcmeApiClientBundle/Resources/public/js/adminController.js"
+"@AcmeApiClientBundle/Resources/public/js/loginController.js"
+"@AcmeApiClientBundle/Resources/public/js/statController.js"
+"@AcmeApiClientBundle/Resources/public/js/md-data-table.js"
+"@AcmeApiClientBundle/Resources/public/js/app-services.js"
+%}
+
+<script src="{{ asset_url }}" type="text/javascript"></script>
+
+{% endjavascripts %}
+
+
+
+</body>
+
+</html>
