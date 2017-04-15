@@ -16,7 +16,7 @@
 
 <md-toolbar class="md-table-toolbar alternate" ng-show="options.rowSelection && selected.length">
   <div class="md-toolbar-tools">
-    <span>{{selected.length}} {{selected.length > 1 ? 'items' : 'item'}} selected</span>
+    <span>{{selected.length}} {{selected.length > 1 ? 'lignes sélectionnées' : 'ligne sélectionnée'}}</span>
     <span flex></span>
     <md-button class="md-icon-button">
       <md-icon>delete</md-icon>
@@ -37,8 +37,8 @@
     <thead ng-if="!options.decapitate" md-head data-md-order="query.order" md-on-reorder="onReorder">
       <tr md-row>
         <th md-column md:order:by="name"><span>Collaborateur</span></th>
-        <th md-column data-md-numeric data-md-order-by="email" data-md-desc><span>Nombre d'emails reçus</span></th>
-        <th md-column data-md-numeric data-md-order-by="sms"><span>Nombre de sms reçus</span></th>
+        <th md-column data-md-numeric data-md-order-by="email" data-md-desc><span>Email</span></th>
+        <th md-column data-md-numeric data-md-order-by="sms"><span>Sms</span></th>
       </tr>
     </thead>
     <tbody md-body>

@@ -10,7 +10,7 @@
 
 
 
-	app.controller("accountCtrl", function($scope){
+	app.controller("accountCtrl", function($scope, $rootScope){
 
 	   $scope.account = {};
 	   
@@ -18,7 +18,6 @@
 	   $scope.account.password = '';
 	   $scope.account.email = '';
 	   $scope.account.phoneNumber = '';
-	   
 	   
 	   $scope.checkLog = function() {
 		alert('checkLog');
