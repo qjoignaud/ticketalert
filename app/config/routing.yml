@@ -9,7 +9,6 @@ acme_blog:
     type:     rest
 
 
-
 index:
     path: /index
     defaults:

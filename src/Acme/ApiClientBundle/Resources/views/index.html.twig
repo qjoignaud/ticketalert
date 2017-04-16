@@ -11,6 +11,8 @@
     <link href="{{ asset_url }}" type="text/css" rel="stylesheet" media="all"/>
 	    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/angular_material/0.8.3/angular-material.min.css">
 	   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
     {% endstylesheets %}
     <script>
         var root_path = "{{ asset('', null, true) }}";
@@ -99,6 +101,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/sha512.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/md5.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/components/enc-base64-min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 {% javascripts output='js/client'
 
@@ -119,6 +123,7 @@
 "@AcmeApiClientBundle/Resources/public/js/accountController.js"
 "@AcmeApiClientBundle/Resources/public/js/adminController.js"
 "@AcmeApiClientBundle/Resources/public/js/loginController.js"
+"@AcmeApiClientBundle/Resources/public/js/faqController.js"
 "@AcmeApiClientBundle/Resources/public/js/statController.js"
 "@AcmeApiClientBundle/Resources/public/js/md-data-table.js"
 "@AcmeApiClientBundle/Resources/public/js/app-services.js"
