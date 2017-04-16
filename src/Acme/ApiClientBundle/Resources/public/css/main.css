@@ -1,5 +1,7 @@
 $gray: #eee;
 
+
+
 md-content.md-default-theme {
   background-color: $gray;
 }
@@ -14,6 +16,16 @@ md-toolbar {
     border-radius: 99%; // round toolbar buttons
   }
 }
+
+a{
+  text-decoration: none;
+  cursor : pointer;
+}
+
+a:link, a:visited {
+    color: black;
+}
+
 h2 {
   font-weight: 400;
 }

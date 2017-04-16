@@ -31,8 +31,14 @@ angular.module('ApiClient', ['ngRoute', 'restangular', 'ui.bootstrap', 'ApiClien
 
         .state('admin', {
             url: '/admin',
-            controller : 'admminCtrl',
+            controller : 'adminCtrl',
             templateUrl: assets_path + '/admin.html'
+        })
+
+        .state('stat', {
+            url: '/stat',
+            controller : 'statCtrl',
+            templateUrl: assets_path + '/stat.html'
         })
 
         .state('faq', {
@@ -40,6 +46,8 @@ angular.module('ApiClient', ['ngRoute', 'restangular', 'ui.bootstrap', 'ApiClien
             controller : 'faqCtrl',
             templateUrl: assets_path + '/faq.html'
         });
+
+
         
         
 })
