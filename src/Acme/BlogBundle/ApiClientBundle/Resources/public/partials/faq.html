@@ -1,0 +1,28 @@
+<div ng-controller="faqCtrl" id="container_faq">
+    <div class="jumbotron">
+        <div class="container">
+            <div class="page-header ">
+                <h1 class="text-center">FOIRE AUX QUESTIONS <br></h1>
+                <div class=" well-sm entete"></div>
+            </div>
+            <br><br>
+            <div class="panel-group" id="accordion">
+                <div class="panel panel-default" ng-repeat="item in items">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+                              {{item.question}}
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseFour" class="panel-collapse collapse ">
+                        <div class="panel-body">
+                          {{item.answer}}
+                        </div>
+                    </div>
+                </div>
+                
+            </div>      
+        </div>
+    </div>
+</div>

@@ -12,6 +12,22 @@
 
 	app.controller("accountCtrl", function($scope, $rootScope){
 
+		$scope.vm = {
+	      formData : {
+	      	login : 'quentin.joignaud',
+	      	password : 'test',
+	        email : 'quentin.joignaud@modisfrance.fr',
+	       	phone : '0669359684'
+	      }
+	    };
+
+	    $scope.tools = [
+		    {id : 1, name : 'Mantis Bug Tracker'},
+		    {id : 2, name : 'Team Foundation Server'},
+		    {id : 3, name : 'Slack'}
+	    ];
+
+
 	   $scope.account = {};
 	   
 	   $scope.account.login = '';
