@@ -1,65 +1,76 @@
 <div ng-controller="accountCtrl">
+	<md-toolbar>
+	    <div class="md-toolbar-tools">
+	      <md-button ng-click="toggleSidenav('left')" hide-gt-md aria-label="Menu">
+	        <ng-md-icon icon="menu"></ng-md-icon>
+	      </md-button>
+	      <h3> Mon compte
+	      </h3>
+	      <span flex></span>
+	    </div>
 
-	<md-content  layout="row" layout-align="center" >
-      <form name="formAccount" id="formAccount" class="container-fluid" ng-submit="checkLog()"  novalidate>
-		  <div class="row">
-			<div class="form-group col-xs-6">
-				<md-input-container>
-				  <md-input-container class="md-icon-float md-block">
-   				    <md-icon md-svg-src="img/icons/ic_person_black_24px.svg" class="name"></md-icon>
-					<input type="text" name="login" ng-model="account.login" placeholder="Identifiant" ng-required="true">
-				  </md-input-container>
-						<div ng-messages="formAccount.login.$error" md-auto-hide="false">
-							<div class="error" ng-message="required" ng-show="formAccount.login.$error">Ce champ est obligatoire.</div>
-						</div>
-				</md-input-container>
-			</div>
-			
-			<div class="col-xs-6">
-				<md-input-container>
-				  <md-input-container class="md-icon-float md-block">
-				    <md-icon md-svg-src="img/icons/ic_lock_black_24px.svg" class="name"></md-icon>
-					<input type="password" name="password" ng-model="account.password" placeholder="Mot de passe" ng-required="true">
-				  </md-input-container>
-				  <div ng-messages="formAccount.password.$error"  md-auto-hide="false">
-					<div class="error" ng-message="required" ng-show="formAccount.password.$error">Ce champ est obligatoire.</div>
-				  </div>
-				</md-input-container>
-			</div>
-			
-			
-		</div>
-	
-		<div class="row">
-			<div class="form-group col-xs-6">
-				<md-input-container>
-					<md-input-container class="md-icon-float md-block">
-						<md-icon md-svg-src="img/icons/ic_email_black_24px.svg" class="name"></md-icon>
-						<input type="email" name="email" ng-model="account.email" placeholder="Email" minlength="10" maxlength="100" ng-pattern="/^.+@.+\..+$/">
-					</md-input-container>
-						<div ng-messages="formAccount.email.$error" role="alert" md-auto-hide="false" >
-							<div ng-message-exp="['minlength', 'maxlength', 'pattern']" class="error" ng-show="formAccount.email.$error">Cet email est invalide.</div>
-						</div>
-				</md-input-container>
-			</div>
-			<div class="form-group col-xs-6">
-				<md-input-container>
-				  <md-input-container>
-				  <md-icon md-svg-src="img/icons/ic_phone_black_24px.svg" class="name"></md-icon>
-					<input type="tel" name="phoneNumber" ng-model="account.phoneNumber" placeholder="Téléphone" ng-pattern="/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/">
-				  </md-input-container>
-					<div ng-messages="formAccount.phoneNumber.$error"  role="alert" md-auto-hide="false">
-						<div class="error" ng-message="pattern" ng-show="formAccount.phoneNumber.$error">Ce numéro est invalide.</div>
+	</md-toolbar>
+
+	<md-content layout="row" layout-align="space-around" layout-padding="layout-padding" ng-cloak="ng-cloak" class="account-form ">
+      <md-card flex-gt-sm="70" flex-gt-md="60">
+        <md-toolbar>
+          <div class="md-toolbar-tools">
+            <h1><span>Informations de Bug Tracking</span></h1>
+          </div>
+        </md-toolbar>
+        <md-card-content>
+          <form name="FormAccount">
+      
+           
+           <div class="md-toolbar-tools">
+              <md-select ng-model="tool" placeholder="Bug Tracker">
+                <md-option ng-repeat="tool in tools" value="{{tool.id}}">
+                  {{tool.name}}
+                </md-option>
+              </md-select>
+    
+            </div>
+            <md-input-container class="md-block">
+             <label><md-icon md-svg-src="images/icons/ic_person_black_24px.svg" class="name"></md-icon>Identifiant</label>
+              <input type="text" name="login" ng-model="vm.formData.login" required="" md-maxlength="50"/>
+              <div ng-messages="FormAccount.login.$error" ng-if='FormAccount.login.$dirty' role="alert" multiple="">
+                <div ng-message="required" class="my-message">Veuillir saisir un login.</div>
+                <div ng-message="md-maxlength" class="my-message">Le login saisi est trop long.</div>
+              </div>
+            </md-input-container>
+
+            <md-input-container class="md-block">
+            <label><md-icon md-svg-src="images/icons/ic_lock_black_24px.svg" class="name"></md-icon>Mot de passe</label>
+              <input type="password" name="password" ng-model="vm.formData.password"  required="" md-maxlength="50"/>
+              <div ng-messages="FormAccount.password.$error"  ng-if='FormAccount.password.$dirty' role="alert" multiple="">
+                <div ng-message="required" class="my-message">Veuillir saisir un mot de passe.</div>
+                <div ng-message="md-maxlength" class="my-message">Le mot de passe saisi est trop long.</div>
+              </div>
+            </md-input-container>
+
+            <md-input-container class="md-block">
+            	<label><md-icon md-svg-src="images/icons/ic_email_black_24px.svg" class="name"></md-icon>Email</label>
+              <input type="text" name="email" ng-model="vm.formData.email" required=""/>
+              <div ng-messages="FormAccount.email.$error"  ng-if='FormAccount.email.$dirty' role="alert" md-auto-hide="false" >
+			  	<div ng-message-exp="['minlength', 'maxlength', 'pattern']" class="error" ng-show="formAccount.email.$error">Cet email est invalide.</div>
+			  </div>
+            </md-input-container>
+
+            <md-input-container class="md-block">
+				  <label><md-icon md-svg-src="images/icons/ic_phone_black_24px.svg" class="name"></md-icon>Tél</label>
+					<input type="tel" name="phone" ng-model="vm.formData.phone" ng-pattern="/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/">
+				  
+					<div ng-messages="FormAccount.phone.$error"  ng-if='FormAccount.phone.$dirty' role="alert" md-auto-hide="false">
+						<div class="error" ng-message="pattern" ng-show="formAccount.phone.$error">Ce numéro est invalide.</div>
 					</div>
 				</md-input-container>
-			</div>
-		</div>
-		<div  layout="row" layout-align="center">
-			
-				<md-button type="submit" value="Enregistrer" ng-click="save()" ng-disabled="formAccount.$invalid" class="md-raised md-primary">Enregistrer</md-button>
-				<md-button type="reset" ng-click="resetForm(formAccount)" class="md-raised md-primary-red">Reset</md-button>
-			
-		</div>
-	</form>
-	</md-content>
+
+			<div class="center">
+	            <md-button ng-disabled="!FormAccount.$valid" ng-click="vm.submit()" class="md-raised md-primary">&nbsp Enregistrer &nbsp</md-button>
+	            <md-button type="reset" ng-click="resetForm(formAccount)" class="md-raised md-primary-red">Reset</md-button>
+	        </div>
+          </form>
+        </md-card-content>
+      </md-card>
+    </md-content>
 </div>
