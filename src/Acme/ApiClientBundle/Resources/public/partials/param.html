@@ -1,5 +1,16 @@
 <div ng-controller="paramCtrl">
-	<div ng-cloak id="param">
+	<md-toolbar>
+	    <div class="md-toolbar-tools">
+	      <md-button ng-click="toggleSidenav('left')" hide-gt-md aria-label="Menu">
+	        <ng-md-icon icon="menu"></ng-md-icon>
+	      </md-button>
+	      <h3> Paramétrages
+	      </h3>
+	      <span flex></span>
+	    </div>
+	</md-toolbar>
+
+	<div ng-cloak id="param" class="margin">
 	  <md-content>
 		<md-tabs md-dynamic-height md-border-bottom>
 		  <md-tab label="Ajouter un paramétrage">
@@ -85,7 +96,7 @@
 								<div class="row" ng-repeat="param in params">
 									<div class="form-inline">
 										<md-button class="md-fab md-mini md-primary md-button">
-											<md-icon md-svg-src="img/icons/ic_settings_white_24px.svg" class="name"></md-icon>
+											<md-icon md-svg-src="images/icons/ic_settings_white_24px.svg" class="name"></md-icon>
 										</md-button>
 										<!--<p class="md-caption">You have assigned the task to: {{ project ? project.name : 'No one yet' }}</p>-->
 										<md-select placeholder="Choix des utilisateurs" ng-model="param.name" style="width: 180px;" ng-required="true">
@@ -98,9 +109,9 @@
 											<md-switch ng-model="param.chbxSms" aria-label="Sms">Sms</md-switch>
 										</span>
 										<span class="form-inline">
-											<select ng-model="param.priorities" ng-options="option.id as option.name for option in test" style="width: 150px;" ng-required="true" multiple >
-										
-											</select>	
+											<md-select ng-model="priority" md-on-open="loadPriorities()" style="width: 150px;" ng-required="true" multiple>
+											  <md-option ng-value="priority" ng-repeat="priority in priorities">{{priority.name}}</md-option>
+											</md-select>
 											
 										</span>
 										<span class="form-inline">
