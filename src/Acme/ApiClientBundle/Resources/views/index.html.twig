@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-framework="angularjs">
+<html lang="en" data-framework="angularjs" ng-app="ApiClient">
 <head>
     <meta charset="utf-8">
     <title>TicketAlert</title>
@@ -22,7 +22,7 @@
 
 
 <!--Header_section-->
-<body layout="row" ng-app="ApiClient">
+<body layout="row" ng-controller="appCtrl">
 	<md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
 	  <md-toolbar class="md-tall md-hue-2">
 	    <span flex></span>
@@ -89,7 +89,6 @@
 	</md-list>
 	</md-sidenav>
 	<div layout="column" class="relative" layout-fill role="main">
-	
 		<div ui-view></div>
 	</div>
 
@@ -112,7 +111,7 @@
 "@AcmeApiClientBundle/Resources/public/components/angular-route/angular-route.min.js"
 "@AcmeApiClientBundle/Resources/public/components/angular-ui-router/angular-ui-router.min.js"
 "@AcmeApiClientBundle/Resources/public/components/angular-cookies/angular-cookies.js"
-"@AcmeApiClientBundle/Resources/public/components/angular-material/angular-material.min.js"
+"@AcmeApiClientBundle/Resources/public/components/angular-material/0.8.3/angular-material.min.js"
 "@AcmeApiClientBundle/Resources/public/components/angular-animate/angular-animate.min.js"
 "@AcmeApiClientBundle/Resources/public/components/angular-aria/angular-aria.min.js"
 "@AcmeApiClientBundle/Resources/public/components/angular-messages/angular-messages.min.js"
@@ -131,7 +130,15 @@
 "@AcmeApiClientBundle/Resources/public/js/app-services.js"
 %}
 
+
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular.min.js"></script>
+	
+    <script src="//ajax.googleapis.com/ajax/libs/angular_material/0.8.3/angular-material.min.js"></script>
+    
+ 
+
 <script src="{{ asset_url }}" type="text/javascript"></script>
+
 
 {% endjavascripts %}
 

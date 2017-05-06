@@ -13,11 +13,13 @@
 	app.controller("adminCtrl", function($scope){
 	  'use strict';
 
-	   $scope.account = {};
-	   
-	   $scope.account.login = 'admin';
-	   $scope.account.password = 'admin';
-
+	  	$scope.vm = {
+	      formData : {
+	      	login : 'admin',
+	      	password : 'password',
+	        confirmPassword : 'password'
+	      }
+	    };
 	   
 	   
 	   $scope.checkLog = function() {
@@ -25,12 +27,6 @@
 	   };
 	   
 
-	   
-	   $scope.resetForm = function(form_) {
-		form_.login.$error = {};
-		form_.password.$error = {};
-
-	  };
 
 });
 	  
