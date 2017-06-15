@@ -1,9 +1,14 @@
- <div ng-controller="statCtrl">
- <md-content layout="column" flex id="stat">
- 
-
-
-	<md-card ng-include="'templates/stat_table.html'"></md-card>
-</md-content>
-
+<div ng-controller="statCtrl">
+ 	<md-toolbar>
+	    <div class="md-toolbar-tools">
+	      <md-button ng-click="toggleSidenav('left')" hide-gt-md aria-label="Menu">
+	        <ng-md-icon icon="menu"></ng-md-icon>
+	      </md-button>
+	      <h1 class="container_title"> Statistiques </h1>
+	      <span flex></span>
+	    </div>
+	</md-toolbar>
+	<md-content layout="column" flex id="stat">
+		<md-card ng-include="'templates/stat_table.html'"></md-card>
+	</md-content>
 </div>

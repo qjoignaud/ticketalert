@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en" data-framework="angularjs" ng-app="ApiClient">
 <head>
-    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>TicketAlert</title>
     {% stylesheets output='js/styles'
     "@AcmeApiClientBundle/Resources/public/css/main.css"
@@ -35,10 +35,10 @@
 	  </md-toolbar>
 	  <md-list>
 	  <md-item>
-	    <a ui-sref="param">
+	    <a ui-sref="param" style="text-decoration:none;">
 	      <md-item-content md-ink-ripple layout="row" layout-align="start center">
 	        <div class="inset">
-	          <ng-md-icon icon="dashboard"></ng-md-icon>
+	          <ng-md-icon icon="bug_report"></ng-md-icon>
 	        </div>
 	        <div class="inset">Paramétrage</div>
 	      </md-item-content>
@@ -48,7 +48,7 @@
 	    <a ui-sref="account">
 	      <md-item-content md-ink-ripple layout="row" layout-align="start center">
 	        <div class="inset">
-	          <ng-md-icon icon="group"></ng-md-icon>
+	          <ng-md-icon icon="account_box"></ng-md-icon>
 	        </div>
 	        <div class="inset">Compte</div>
 	      </md-item-content>
@@ -60,35 +60,57 @@
 	        <div class="inset">
 	          <ng-md-icon icon="question_answer"></ng-md-icon>
 	        </div>
-	        <div class="inset">FAQ</div>
+	        <div class="inset" style="text-decoration : none;" >FAQ</div>
 	      </md-item-content>
 	    </a>
 	  </md-item>
 	  <md-divider></md-divider>
-	  <md-subheader>Management</md-subheader>
-	  <md-item>
-	    <a ui-sref="admin">
-	      <md-item-content md-ink-ripple layout="row" layout-align="start center">
-	        <div class="inset">
-	          <ng-md-icon icon="settings"></ng-md-icon>
-	        </div>
-	        <div class="inset">Administration</div>
-	      </md-item-content>
-	    </a>
-	  </md-item>
-	  <md-item>
-	    <a ui-sref="stat">
-	      <md-item-content md-ink-ripple layout="row" layout-align="start center">
-	        <div class="inset">
-	          <ng-md-icon icon="poll"></ng-md-icon>
-	        </div>
-	        <div class="inset">Statistiques</div>
-	      </md-item-content>
-	    </a>
-	  </md-item>
+	  <div ng-show="admin">
+		  <md-subheader>Management</md-subheader>
+		  <md-item>
+		    <a ui-sref="admin">
+		      <md-item-content md-ink-ripple layout="row" layout-align="start center">
+		        <div class="inset">
+		          <ng-md-icon icon="supervisor_account"></ng-md-icon>
+		        </div>
+		        <div class="inset">Administration</div>
+		      </md-item-content>
+		    </a>
+		  </md-item>
+		  <md-item>
+		    <a ui-sref="reset">
+		      <md-item-content md-ink-ripple layout="row" layout-align="start center">
+		        <div class="inset">
+		          <ng-md-icon icon="lock"></ng-md-icon>
+		        </div>
+		        <div class="inset">Modifier le mot de passe</div>
+		      </md-item-content>
+		    </a>
+		  </md-item>
+		  <md-item>
+		    <a ui-sref="stat">
+		      <md-item-content md-ink-ripple layout="row" layout-align="start center">
+		        <div class="inset">
+		          <ng-md-icon icon="poll"></ng-md-icon>
+		        </div>
+		        <div class="inset">Statistiques</div>
+		      </md-item-content>
+		    </a>
+		  </md-item>
+		</div>
 	</md-list>
 	</md-sidenav>
 	<div layout="column" class="relative" layout-fill role="main">
+	<md-toolbar class="md-hue-2">
+	    <div>
+	      <md-button ng-click="toggleSidenav('left')" hide-gt-md aria-label="Menu">
+	        <ng-md-icon icon="menu"></ng-md-icon>
+	      </md-button>
+	     <span class="logout"> <ng-md-icon icon="person"></ng-md-icon> <span class="logout_container"> Log out </span> </span>
+	      <span flex></span>
+	    </div>
+
+	</md-toolbar>
 		<div ui-view></div>
 	</div>
 
@@ -108,6 +130,7 @@
 {% javascripts output='js/client'
 
 "@AcmeApiClientBundle/Resources/public/components/angular/angular.js"
+"@AcmeApiClientBundle/Resources/public/components/angular-sanitize/angular-sanitize.js"
 "@AcmeApiClientBundle/Resources/public/components/angular-route/angular-route.min.js"
 "@AcmeApiClientBundle/Resources/public/components/angular-ui-router/angular-ui-router.min.js"
 "@AcmeApiClientBundle/Resources/public/components/angular-cookies/angular-cookies.js"
@@ -126,15 +149,12 @@
 "@AcmeApiClientBundle/Resources/public/js/loginController.js"
 "@AcmeApiClientBundle/Resources/public/js/faqController.js"
 "@AcmeApiClientBundle/Resources/public/js/statController.js"
+"@AcmeApiClientBundle/Resources/public/js/resetController.js"
 "@AcmeApiClientBundle/Resources/public/js/md-data-table.js"
 "@AcmeApiClientBundle/Resources/public/js/app-services.js"
 %}
 
 
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular.min.js"></script>
-	
-    <script src="//ajax.googleapis.com/ajax/libs/angular_material/0.8.3/angular-material.min.js"></script>
-    
  
 
 <script src="{{ asset_url }}" type="text/javascript"></script>

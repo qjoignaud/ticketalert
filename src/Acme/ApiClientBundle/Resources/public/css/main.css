@@ -11,11 +11,6 @@ md-card {
     margin-top: 0;
   }
 }
-md-toolbar {
-  .md-button.md-default-theme {
-    border-radius: 99%; // round toolbar buttons
-  }
-}
 
 a{
   text-decoration: none;
@@ -146,7 +141,51 @@ input {
     }
 }
 
-md-select {
-  width : 150px;
+.account-form md-select-label > span {
+  width : 190px;
 }
 
+
+.center {
+  text-align: center;
+}
+
+
+.container_header {
+
+  color : #fff;
+  text-align: center;
+  font-weight: bold;
+}
+
+ .subcontainer {
+  background-color: yellow;
+  color : black;
+  text-align: center;
+  font-weight: bold;
+  font-size : 18px;
+ padding : 20px 0px 20px 0px;
+}
+
+
+
+.logout{
+  float:right;
+  margin : 5px 20px 20px 20px;
+}
+
+.logout_container{
+  padding-bottom:15px;
+}
+
+.margin {
+  margin : 0px 10px 0px 10px;
+}
+
+.buttonAdmin{
+  width:100px;
+}
+
+.panel-group {
+  padding : 20px 0px 0px 0px;
+}

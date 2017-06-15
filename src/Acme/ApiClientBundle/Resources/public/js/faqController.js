@@ -22,7 +22,7 @@ app.controller("faqCtrl", function($scope){
 		{ 
 			id : 'Two',
 			question : ' J\'ai effectué un paramétrage mais je ne reçois aucune notification. Comment régler mon problème? ',
-			answer : ' Si vous avez choisi la notification sms, il faut renseigner un numéro de téléphone et le confirmer. Le paramétrage effectué doit ensuite correspondre au ticket nouvellement créé ou modifié. Il faut distinguer 2 sections : <ul><li  class=\"dropdown\"> - <b>la 1ère section</b> correspond aux critères d\'envoi d\'une notification suite à un nouveau ticket : chaque nouveau ticket est analysé de telle sorte à vérifier si un paramétrage concorde avec les caractéristiques du ticket. Si tel est le cas, la notification adéquate vous avertit de la présence d\'un nouveau ticket.</li><li> - <b>la 2ème section</b> correspond aux critères d\'envoi d\'une notification suite à un ticket modifié : vous avez la possibilité de suivre les tickets respectant les critères du paramétrage et ainsi choisir selon quels types de champs vous voulez être averti.</li></ul>' 
+			answer : ' Si vous avez choisi la notification sms, il faut renseigner un numéro de téléphone et le confirmer. Le paramétrage effectué doit ensuite correspondre au ticket nouvellement créé ou modifié. Il faut distinguer 2 sections : <ul><li  class=\"dropdown\"> <b>la 1ère section</b> correspond aux critères d\'envoi d\'une notification suite à un nouveau ticket : chaque nouveau ticket est analysé de telle sorte à vérifier si un paramétrage concorde avec les caractéristiques du ticket. Si tel est le cas, la notification adéquate vous avertit de la présence d\'un nouveau ticket.</li><li> <b>la 2ème section</b> correspond aux critères d\'envoi d\'une notification suite à un ticket modifié : vous avez la possibilité de suivre les tickets respectant les critères du paramétrage et ainsi choisir selon quels types de champs vous voulez être averti.</li></ul>' 
 		},
 		{ 
 			id : 'Three',
@@ -37,7 +37,7 @@ app.controller("faqCtrl", function($scope){
 		{ 
 			id : 'Five',
 			question : 'Je ne vois pas les paramétrages des autres membres du projet. Comment puis-je y accéder? ',
-			answer : '  L\'affichage des paramétrages d\'un projet varie suivant le niveau d\'accès de l\'utilisateur :<ul><li><b> - invité, rapporteur, testeur, développeur : </b> accède uniquement à ses paramétrages.</li><li><b> - gestionnaire : </b> accède aux paramétrages de son équipe et a les droits de modifications sur chaque paramétrage excepté les invités et les rapporteurs.</li><li><b> - administrateur : </b> accède à tous les paramétrages du projet et a les droits de suppression sur chaque paramétrage.</li></ul>' 
+			answer : '  L\'affichage des paramétrages d\'un projet varie suivant le niveau d\'accès de l\'utilisateur :<ul><li><b> invité, rapporteur, testeur, développeur : </b> accède uniquement à ses paramétrages.</li><li><b> gestionnaire : </b> accède aux paramétrages de son équipe et a les droits de modifications sur chaque paramétrage excepté les invités et les rapporteurs.</li><li><b> administrateur : </b> accède à tous les paramétrages du projet et a les droits de suppression sur chaque paramétrage.</li></ul>' 
 		},
 
 		{

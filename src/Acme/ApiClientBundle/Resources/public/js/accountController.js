@@ -14,6 +14,7 @@
 
 		$scope.vm = {
 	      formData : {
+	      	tool : 'Mantis Bug Tracker',
 	      	login : 'quentin.joignaud',
 	      	password : 'test',
 	        email : 'quentin.joignaud@modisfrance.fr',

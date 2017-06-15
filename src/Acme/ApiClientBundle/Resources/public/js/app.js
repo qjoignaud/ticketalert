@@ -7,7 +7,7 @@
  */
 
 
- var app = angular.module('ApiClient.controllers', ['md.data.table','ngCookies','ngMaterial', 'ngAnimate', 'ngAria', 'ngMessages']);
+ var app = angular.module('ApiClient.controllers', ['md.data.table', 'ngSanitize', 'ngCookies','ngMaterial', 'ngAnimate', 'ngAria', 'ngMessages']);
 
 angular.module('ApiClient', ['ngRoute', 'restangular', 'ui.bootstrap', 'ApiClient.controllers', 'ApiClient.services', 'ngMaterial', 'ngMdIcons', 'ui.router'])
 
@@ -15,6 +15,8 @@ angular.module('ApiClient', ['ngRoute', 'restangular', 'ui.bootstrap', 'ApiClien
   $scope.toggleSidenav = function(menuId) {
     $mdSidenav(menuId).toggle();
   };
+
+  $scope.admin = true;
  
  
   $scope.alert = '';
@@ -54,6 +56,13 @@ angular.module('ApiClient', ['ngRoute', 'restangular', 'ui.bootstrap', 'ApiClien
             controller : 'adminCtrl',
             templateUrl: assets_path + '/admin.html'
         })
+
+        .state('reset', {
+            url: '/reset',
+            controller : 'resetCtrl',
+            templateUrl: assets_path + '/reset.html'
+        })
+
 
         .state('stat', {
             url: '/stat',
